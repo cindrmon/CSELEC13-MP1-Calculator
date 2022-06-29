@@ -41,7 +41,11 @@ namespace Calculator
                 {
                     lblResultOutput.Text = rawAnswer.ToString();
                 }
-                
+
+            }
+            catch (InvalidCastException icEx)
+            {
+                lblErrorText.Text = "Error: Invalid Syntax";
             }
             catch (SyntaxErrorException seEx)
             {
@@ -51,7 +55,6 @@ namespace Calculator
             {
                 lblErrorText.Text = "Error: Invalid Syntax";
             }
-            ClearInput();
         }
 
         private void ClearInput()
